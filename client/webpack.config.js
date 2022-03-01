@@ -20,7 +20,6 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
-        title: "Contact Cards",
       }),
 
       // Injects our custom service worker
@@ -33,9 +32,9 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Contact Cards',
-        short_name: 'Contact',
-        description: 'Never forget your contacts!',
+        name: 'JATE',
+        short_name: 'JATE',
+        description: 'Text Editor',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: '/',

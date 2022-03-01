@@ -24,10 +24,10 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-registerRoute(
-  
-  // ({ request }) => request.mode === 'navigate', pageCache);
+registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
+// Asset Cache
+registerRoute(
 ({ request }) => ['navigate'].includes(request.destination),
 new StaleWhileRevalidate({
   // Name of the cache storage.
