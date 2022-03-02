@@ -20,12 +20,13 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
+        title: "J.A.T.E"
       }),
 
       // Injects our custom service worker
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "service-worker.js",
+        swDest: "src-sw.js",
       }),
 
       // Creates a manifest.json file.

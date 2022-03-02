@@ -24,13 +24,13 @@ export const putDb = async (content) => {
   const request = store.put({id: 1, value: content});
     // Get confirmation of the request.
     const result = await request;
-    console.log('result.value', result);
+    console.log('its working!!!', result);
     return result;
   
 };
 
 // TODO: Add logic for a method that gets all the content from the database
-export const getDb = async (e) => {
+export const getDb = async () => {
   console.log('GET from the database');
 
   // Create a connection to the database database and version we want to use.
@@ -43,12 +43,14 @@ export const getDb = async (e) => {
   const store = tx.objectStore('jate');
 
   // Use the .getAll() method to get all data in the database.
-  const request = store.getAll();
+  const request = store.get(1);
 
   // Get confirmation of the request.
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  result ? 
+  console.log('yayyyy', result) 
+  : console.log('This Get did not work!')
+  return result?.value;
 
 };
 
